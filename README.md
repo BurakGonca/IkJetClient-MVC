@@ -39,17 +39,52 @@ Yeni talepler oluşturabilir.
 #### İzin ve Talepler: İK yöneticisi taleplerle ilgili işlemleri yönetebilir.
 
 
-#### API Sunucusu
+### Bağlantılar
 
-Bu proje, ikJetServer-API adlı bir API sunucusuna bağlıdır. API sunucusu, uygulamanın arka plan işlemlerini yönetir ve RESTful API sağlar.
+- **API Sunucusu**: [ikJetServer-API GitHub Repository](https://github.com/BurakGonca/IkJetServer-API)
+  <p align="left">
+    <a href="https://github.com/BurakGonca/IkJetServer-API">
+      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" style="width:50px;">
+    </a>
+  </p>
 
-<p align="center">
-  <a href="https://github.com/BurakGonca/IkJetServer-API">
-    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" style="width:50px;">
-  </a>
-</p>
+- **MVC Ön Yüzü**: [ikJetClient-MVC GitHub Repository](https://github.com/BurakGonca/IkJetClient-MVC)
+  <p align="left">
+    <a href="https://github.com/BurakGonca/IkJetClient-MVC">
+      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" style="width:50px;">
+    </a>
+  </p>
+
+### Proje Tanıtım Videoları
+
+- **Client Arayüzü**: [Video](https://www.youtube.com/watch?v=W985E0gYhBE&list=PLHXbVmnbJxz6Th2LDvgFmKOEBEnVgtJJq)
+  <p align="center">
+    <a href="https://www.youtube.com/watch?v=W985E0gYhBE&list=PLHXbVmnbJxz6Th2LDvgFmKOEBEnVgtJJq">
+      <img src="https://img.youtube.com/vi/W985E0gYhBE/maxresdefault.jpg" alt="Client Arayüzü Video" style="width:100%;max-width:600px;">
+    </a>
+  </p>
+
+- **Admin Paneli**: [Video](https://www.youtube.com/watch?v=VB4vjMxs9a8&list=PLHXbVmnbJxz6Th2LDvgFmKOEBEnVgtJJq&index=2)
+  <p align="center">
+    <a href="https://www.youtube.com/watch?v=VB4vjMxs9a8&list=PLHXbVmnbJxz6Th2LDvgFmKOEBEnVgtJJq&index=2">
+      <img src="https://img.youtube.com/vi/VB4vjMxs9a8/maxresdefault.jpg" alt="Admin Paneli Video" style="width:100%;max-width:600px;">
+    </a>
+  </p>
+
+- **İK Yöneticisi**: [Video](https://www.youtube.com/watch?v=dV-5THdzTcA&list=PLHXbVmnbJxz6Th2LDvgFmKOEBEnVgtJJq&index=3)
+  <p align="center">
+    <a href="https://www.youtube.com/watch?v=dV-5THdzTcA&list=PLHXbVmnbJxz6Th2LDvgFmKOEBEnVgtJJq&index=3">
+      <img src="https://img.youtube.com/vi/dV-5THdzTcA/maxresdefault.jpg" alt="İK Yöneticisi Video" style="width:100%;max-width:600px;">
+    </a>
+  </p>
+
+- **Personel Paneli**: [Video](https://www.youtube.com/watch?v=1WdrsgtfbMo&list=PLHXbVmnbJxz6Th2LDvgFmKOEBEnVgtJJq&index=4)
+  <p align="center">
+    <a href="https://www.youtube.com/watch?v=1WdrsgtfbMo&list=PLHXbVmnbJxz6Th2LDvgFmKOEBEnVgtJJq&index=4">
+      <img src="https://img.youtube.com/vi/1WdrsgtfbMo/maxresdefault.jpg" alt="Personel Paneli Video" style="width:100%;max-width:600px;">
+    </a>
+  </p>
 
 
 
-#### Proje Tanıtım Videosu
-<p align="center"> <a href="https://www.youtube.com/watch?v=W985E0gYhBE&list=PLHXbVmnbJxz6Th2LDvgFmKOEBEnVgtJJq"> <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube Logo" style="width:50px;top:10px;left:10px;"> <img src="https://img.youtube.com/vi/W985E0gYhBE/maxresdefault.jpg" alt="ikJet Tanıtım Videosu" style="width:100%;max-width:600px;"> </a> </p>
+
