@@ -32,7 +32,7 @@ Yeni talepler oluşturabilir.
 
 #### Özellikler
 
-#### Kullanıcı Yönetimi: Kullanıcı oluşturulduğunda şifre ve e-posta otomatik olarak oluşturulur ve kullanıcıya e-posta gönderilir. E-posta onaylandığında kullanıcı sisteme giriş yapabilir. Şifre sıfırlama işlemi sırasında da yeni şifre oluşturulur ve kullanıcıya e-posta gönderilir.
+#### Kullanıcı Yönetimi: Kullanıcı oluşturulduğunda şifre ve e-posta otomatik olarak oluşturulur ve kullanıcıya e-posta gönderilir. E-posta onaylandığında kullanıcı sisteme giriş yapabilir. 
 
 #### Şifre Sıfırlama: Kullanıcılar, şifremi unuttum özelliği ile yeni şifre oluşturabilir ve bu şifre e-posta ile kendilerine gönderilir.
 
@@ -40,6 +40,7 @@ Yeni talepler oluşturabilir.
 
 
 #### API Sunucusu
+
 Bu proje, ikJetServer-API adlı bir API sunucusuna bağlıdır. API sunucusu, uygulamanın arka plan işlemlerini yönetir ve RESTful API sağlar.
 
 <p align="center">
