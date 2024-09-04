@@ -35,7 +35,7 @@ namespace IkJetApp.Areas.HRManager.Controllers
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var userViewModel = await _authenticatedUser.GetUserByIdAsync(userId);
             var httpClient = _httpClientFactory.CreateClient("MyHttpClient");
-            var response = await httpClient.GetAsync($"https://ikjet-api20240824103050.azurewebsites.net/api/HRManager/GetUsersByCompany?companyName={userViewModel.CompanyName}");
+            var response = await httpClient.GetAsync($"https://localhost:7262/api/HRManager/GetUsersByCompany?companyName={userViewModel.CompanyName}");
 
             if (response.IsSuccessStatusCode)
             {
@@ -65,7 +65,7 @@ namespace IkJetApp.Areas.HRManager.Controllers
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var userViewModel = await _authenticatedUser.GetUserByIdAsync(userId);
             var httpClient = _httpClientFactory.CreateClient("MyHttpClient");
-            var response = await httpClient.GetAsync($"https://ikjet-api20240824103050.azurewebsites.net/api/HRManager/GetExpenseRequestsByCompany?companyName={userViewModel.CompanyName}");
+            var response = await httpClient.GetAsync($"https://localhost:7262/api/HRManager/GetExpenseRequestsByCompany?companyName={userViewModel.CompanyName}");
 
             if (response.IsSuccessStatusCode)
             {
@@ -93,7 +93,7 @@ namespace IkJetApp.Areas.HRManager.Controllers
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var userViewModel = await _authenticatedUser.GetUserByIdAsync(userId);
             var httpClient = _httpClientFactory.CreateClient("MyHttpClient");
-            var response = await httpClient.GetAsync($"https://ikjet-api20240824103050.azurewebsites.net/api/HRManager/GetPrepaymentRequestsByCompany?companyName={userViewModel.CompanyName}");
+            var response = await httpClient.GetAsync($"https://localhost:7262/api/HRManager/GetPrepaymentRequestsByCompany?companyName={userViewModel.CompanyName}");
 
             if (response.IsSuccessStatusCode)
             {
@@ -124,7 +124,7 @@ namespace IkJetApp.Areas.HRManager.Controllers
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var userViewModel = await _authenticatedUser.GetUserByIdAsync(userId);
             var httpClient = _httpClientFactory.CreateClient("MyHttpClient");
-            var response = await httpClient.GetAsync($"https://ikjet-api20240824103050.azurewebsites.net/api/HRManager/GetWorkOffRequestsByCompany?companyName={userViewModel.CompanyName}");
+            var response = await httpClient.GetAsync($"https://localhost:7262/api/HRManager/GetWorkOffRequestsByCompany?companyName={userViewModel.CompanyName}");
 
             if (response.IsSuccessStatusCode)
             {
@@ -160,7 +160,7 @@ namespace IkJetApp.Areas.HRManager.Controllers
             var httpClient = _httpClientFactory.CreateClient("MyHttpClient");
 
 
-            var url = $"https://ikjet-api20240824103050.azurewebsites.net/api/HRManager/ExpenseStatusChange?id={id}&newStatus={approvalStatus}";
+            var url = $"https://localhost:7262/api/HRManager/ExpenseStatusChange?id={id}&newStatus={approvalStatus}";
 
             var response = await httpClient.GetAsync(url);
 
@@ -188,7 +188,7 @@ namespace IkJetApp.Areas.HRManager.Controllers
             var httpClient = _httpClientFactory.CreateClient("MyHttpClient");
 
 
-            var url = $"https://ikjet-api20240824103050.azurewebsites.net/api/HRManager/PrePaymentStatusChange?id={id}&newStatus={approvalStatus}";
+            var url = $"https://localhost:7262/api/HRManager/PrePaymentStatusChange?id={id}&newStatus={approvalStatus}";
 
             var response = await httpClient.GetAsync(url);
 
@@ -215,7 +215,7 @@ namespace IkJetApp.Areas.HRManager.Controllers
             var httpClient = _httpClientFactory.CreateClient("MyHttpClient");
 
 
-            var url = $"https://ikjet-api20240824103050.azurewebsites.net/api/HRManager/WorkOffStatusChange?id={id}&newStatus={approvalStatus}";
+            var url = $"https://localhost:7262/api/HRManager/WorkOffStatusChange?id={id}&newStatus={approvalStatus}";
        
         
 
@@ -238,7 +238,7 @@ namespace IkJetApp.Areas.HRManager.Controllers
         public async Task<IActionResult> ChangeUserStatus(int id)
         {
 
-            var url = $"https://ikjet-api20240824103050.azurewebsites.net/api/AppUser/UserStatusChange?id={id}&status=false";
+            var url = $"https://localhost:7262/api/AppUser/UserStatusChange?id={id}&status=false";
             var httpClient = _httpClientFactory.CreateClient("MyHttpClient");
             var response = await httpClient.GetAsync(url);
 

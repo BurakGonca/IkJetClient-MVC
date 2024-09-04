@@ -42,7 +42,7 @@ namespace IkJetApp.Controllers
 
             var httpClient = _httpClientFactory.CreateClient("MyHttpClient");
 
-            var response = await httpClient.PostAsJsonAsync("https://ikjet-api20240824103050.azurewebsites.net/api/Auth", loginViewModel);
+            var response = await httpClient.PostAsJsonAsync("https://localhost:7262/api/Auth", loginViewModel);
 
             if (response.IsSuccessStatusCode)
             {
@@ -120,7 +120,7 @@ namespace IkJetApp.Controllers
         {
 
             var httpClient = _httpClientFactory.CreateClient("MyHttpClient");
-            var response = httpClient.GetAsync("https://ikjet-api20240824103050.azurewebsites.net/api/Company/async").Result;
+            var response = httpClient.GetAsync("https://localhost:7262/api/Company/async").Result;
 
             if (response.IsSuccessStatusCode)
             {
@@ -182,7 +182,7 @@ namespace IkJetApp.Controllers
 
                 //id ye göre company gelsin
                 var httpClient3 = _httpClientFactory.CreateClient("MyHttpClient");
-                var response3 = httpClient3.GetAsync($"https://ikjet-api20240824103050.azurewebsites.net/api/Company/{id}").Result;
+                var response3 = httpClient3.GetAsync($"https://localhost:7262/api/Company/{id}").Result;
 
                 if (response3.IsSuccessStatusCode)
                 {
@@ -225,7 +225,7 @@ namespace IkJetApp.Controllers
 
             //TC 2. validasyonu (aynı tc ile ikinci user kaydolmamalı)
             var httpClient2 = _httpClientFactory.CreateClient("MyHttpClient");
-            var response2 = await httpClient2.GetAsync($"https://ikjetapp20240824120603.azurewebsites.net/api/AppUser/by-tc/{model.TCIdentityNumber}");
+            var response2 = await httpClient2.GetAsync($"https://localhost:7262/api/AppUser/by-tc/{model.TCIdentityNumber}");
 
             if (response2.IsSuccessStatusCode)
             {
@@ -292,7 +292,7 @@ namespace IkJetApp.Controllers
 
             var httpClient = _httpClientFactory.CreateClient("MyHttpClient");
 
-            var postResponse = await httpClient.PostAsync("https://ikjet-api20240824103050.azurewebsites.net/api/AppUser", content);
+            var postResponse = await httpClient.PostAsync("https://localhost:7262/api/AppUser", content);
 
             if (postResponse.IsSuccessStatusCode)
             {
@@ -397,7 +397,7 @@ namespace IkJetApp.Controllers
 
             var updatingId = int.Parse(userId);
 
-            var putResponse = await httpClient2.PutAsync($"https://ikjetapp20240824120603.azurewebsites.net/api/AppUser/{updatingId}", content);
+            var putResponse = await httpClient2.PutAsync($"https://localhost:7262/api/AppUser/{updatingId}", content);
 
 
 
@@ -422,7 +422,7 @@ namespace IkJetApp.Controllers
             var httpClient = _httpClientFactory.CreateClient("MyHttpClient");
 
 
-            var deleteResponse = await httpClient.DeleteAsync($"https://ikjetapp20240824120603.azurewebsites.net/api/AppUser/{userId}");
+            var deleteResponse = await httpClient.DeleteAsync($"https://localhost:7262/api/AppUser/{userId}");
 
             if (deleteResponse.IsSuccessStatusCode)
             {
@@ -448,7 +448,7 @@ namespace IkJetApp.Controllers
         public async Task<IActionResult> ResetPassword(UserViewModel model)
         {
             var httpClientGetUser = _httpClientFactory.CreateClient("MyHttpClient");
-            var responseGetUser = await httpClientGetUser.GetAsync($"https://ikjetapp20240824120603.azurewebsites.net/api/AppUser/by-tc/{model.TCIdentityNumber}");
+            var responseGetUser = await httpClientGetUser.GetAsync($"https://localhost:7262/api/AppUser/by-tc/{model.TCIdentityNumber}");
 
             if (!responseGetUser.IsSuccessStatusCode)
             {
@@ -510,7 +510,7 @@ namespace IkJetApp.Controllers
             var httpClientUpdate = _httpClientFactory.CreateClient("MyHttpClient");
 
 
-            var putResponse = await httpClientUpdate.PutAsync($"https://ikjetapp20240824120603.azurewebsites.net/api/AppUser/{userViewModel.Id}", content);
+            var putResponse = await httpClientUpdate.PutAsync($"https://localhost:7262/api/AppUser/{userViewModel.Id}", content);
 
 
 
@@ -520,7 +520,7 @@ namespace IkJetApp.Controllers
 
                 var httpClientSendEmail = _httpClientFactory.CreateClient("MyHttpClient");
 
-                var sendResponse = await httpClientSendEmail.GetAsync($"https://ikjetapp20240824120603.azurewebsites.net/api/AppUser/send-email?userId={userViewModel.Id}&password={model.Password}");
+                var sendResponse = await httpClientSendEmail.GetAsync($"https://localhost:7262/api/AppUser/send-email?userId={userViewModel.Id}&password={model.Password}");
 
 
                 TempData["Message"] = "Şifre sıfırlama başarılı! E-postanızı kontrol edebilirsiniz.";
@@ -558,7 +558,7 @@ namespace IkJetApp.Controllers
             var passwordCheck = new { UserId = userId, Password = model.OldPassword };
             var passwordCheckContent = new StringContent(System.Text.Json.JsonSerializer.Serialize(passwordCheck), Encoding.UTF8, "application/json");
 
-            var responseCheck = await httpClientCheck.PostAsync($"https://ikjetapp20240824120603.azurewebsites.net/api/Auth/CheckPassword", passwordCheckContent);
+            var responseCheck = await httpClientCheck.PostAsync($"https://localhost:7262/api/Auth/CheckPassword", passwordCheckContent);
 
             var responseContent = await responseCheck.Content.ReadAsStringAsync();
             var isPasswordValid = System.Text.Json.JsonSerializer.Deserialize<bool>(responseContent);
@@ -619,7 +619,7 @@ namespace IkJetApp.Controllers
 
             var updatingId = int.Parse(userId);
 
-            var putResponse = await httpClient2.PutAsync($"https://ikjetapp20240824120603.azurewebsites.net/api/AppUser/{updatingId}", content);
+            var putResponse = await httpClient2.PutAsync($"https://localhost:7262/api/AppUser/{updatingId}", content);
 
 
 

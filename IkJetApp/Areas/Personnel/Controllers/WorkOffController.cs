@@ -26,7 +26,7 @@ namespace IkJetApp.Areas.Personnel.Controllers
         }
         private async Task<List<WorkOffViewModel>> GetWorkOffListAsync(string userId)
         {
-            var response = await _httpClient.GetAsync($"https://ikjet-api20240824103050.azurewebsites.net/api/WorkOff/user/{userId}");
+            var response = await _httpClient.GetAsync($"https://localhost:7262/api/WorkOff/user/{userId}");
 
             if (response.IsSuccessStatusCode)
             {
@@ -154,7 +154,7 @@ namespace IkJetApp.Areas.Personnel.Controllers
 
             if (ModelState.IsValid)
             {
-                var response = await _httpClient.PostAsJsonAsync("https://ikjet-api20240824103050.azurewebsites.net/api/WorkOff", viewModel);
+                var response = await _httpClient.PostAsJsonAsync("https://localhost:7262/api/WorkOff", viewModel);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -170,7 +170,7 @@ namespace IkJetApp.Areas.Personnel.Controllers
         // GET: /Personnel/WorkOff/Edit/5
         public async Task<IActionResult> Edit(int id)
         {
-            var response = await _httpClient.GetAsync($"https://ikjet-api20240824103050.azurewebsites.net/api/WorkOff/{id}");
+            var response = await _httpClient.GetAsync($"https://localhost:7262/api/WorkOff/{id}");
 
             if (response.IsSuccessStatusCode)
             {
@@ -192,7 +192,7 @@ namespace IkJetApp.Areas.Personnel.Controllers
                 return BadRequest();
             }
 
-            var response = await _httpClient.PutAsJsonAsync($"https://ikjet-api20240824103050.azurewebsites.net/api/WorkOff/{id}", viewModel);
+            var response = await _httpClient.PutAsJsonAsync($"https://localhost:7262/api/WorkOff/{id}", viewModel);
 
             if (response.IsSuccessStatusCode)
             {
@@ -206,7 +206,7 @@ namespace IkJetApp.Areas.Personnel.Controllers
         // GET: /Personnel/WorkOff/Delete/5
         public async Task<IActionResult> Delete(int id)
         {
-            var response = await _httpClient.DeleteAsync($"https://ikjet-api20240824103050.azurewebsites.net/api/WorkOff/{id}");
+            var response = await _httpClient.DeleteAsync($"https://localhost:7262/api/WorkOff/{id}");
 
             if (response.IsSuccessStatusCode)
             {

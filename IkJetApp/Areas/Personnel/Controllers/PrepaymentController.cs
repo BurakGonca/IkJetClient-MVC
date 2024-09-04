@@ -31,7 +31,7 @@ namespace IkJetApp.Areas.Personnel.Controllers
 
         private async Task<List<PrepaymentViewModel>> GetPrepaymentListAsync(string userId)
         {
-            var response = await _httpClient.GetAsync($"https://ikjet-api20240824103050.azurewebsites.net/api/Prepayment/user/{userId}");
+            var response = await _httpClient.GetAsync($"https://localhost:7262/api/Prepayment/user/{userId}");
 
             if (response.IsSuccessStatusCode)
             {
@@ -173,7 +173,7 @@ namespace IkJetApp.Areas.Personnel.Controllers
 
             if (ModelState.IsValid)
             {
-                var response = await _httpClient.PostAsJsonAsync("https://ikjet-api20240824103050.azurewebsites.net/api/Prepayment", viewModel);
+                var response = await _httpClient.PostAsJsonAsync("https://localhost:7262/api/Prepayment", viewModel);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -189,7 +189,7 @@ namespace IkJetApp.Areas.Personnel.Controllers
         // GET: /Personnel/Prepayment/Edit/5
         public async Task<IActionResult> Edit(int id)
         {
-            var response = await _httpClient.GetAsync($"https://ikjet-api20240824103050.azurewebsites.net/api/Prepayment/{id}");
+            var response = await _httpClient.GetAsync($"https://localhost:7262/api/Prepayment/{id}");
 
             if (response.IsSuccessStatusCode)
             {
@@ -211,7 +211,7 @@ namespace IkJetApp.Areas.Personnel.Controllers
                 return BadRequest();
             }
 
-            var response = await _httpClient.PutAsJsonAsync($"https://ikjet-api20240824103050.azurewebsites.net/api/Prepayment/{id}", viewModel);
+            var response = await _httpClient.PutAsJsonAsync($"https://localhost:7262/api/Prepayment/{id}", viewModel);
 
             if (response.IsSuccessStatusCode)
             {
@@ -225,7 +225,7 @@ namespace IkJetApp.Areas.Personnel.Controllers
         // GET: /Personnel/Prepayment/Delete/5
         public async Task<IActionResult> Delete(int id)
         {
-            var response = await _httpClient.DeleteAsync($"https://ikjet-api20240824103050.azurewebsites.net/api/Prepayment/{id}");
+            var response = await _httpClient.DeleteAsync($"https://localhost:7262/api/Prepayment/{id}");
 
             if (response.IsSuccessStatusCode)
             {
@@ -241,7 +241,7 @@ namespace IkJetApp.Areas.Personnel.Controllers
         //[ValidateAntiForgeryToken]
         //public async Task<IActionResult> Delete(int id, IFormCollection form)
         //{
-        //    var response = await _httpClient.DeleteAsync($"https://ikjet-api20240824103050.azurewebsites.net/api/WorkOff/{id}");
+        //    var response = await _httpClient.DeleteAsync($"https://localhost:7262/api/WorkOff/{id}");
 
         //    if (response.IsSuccessStatusCode)
         //    {

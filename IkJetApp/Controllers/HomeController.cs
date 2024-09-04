@@ -56,7 +56,7 @@ namespace IkJetApp.Controllers
 
         public async Task<IActionResult> EmailContact(string name, string email, string subject, string message)
         {
-            var url = $"https://ikjet-api20240824103050.azurewebsites.net/api/AppUser/contact-email?name={name}&email={email}&subject={subject}&message={message}";
+            var url = $"https://localhost:7262/api/AppUser/contact-email?name={name}&email={email}&subject={subject}&message={message}";
 
 
             var httpClientSendEmail = _httpClientFactory.CreateClient("MyHttpClient");

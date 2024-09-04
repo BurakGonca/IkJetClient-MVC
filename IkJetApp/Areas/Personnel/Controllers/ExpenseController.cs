@@ -28,7 +28,7 @@ namespace IkJetApp.Areas.Personnel.Controllers
 
         private async Task<List<ExpenseViewModel>> GetExpenseListAsync(string userId)
         {
-            var response = await _httpClient.GetAsync($"https://ikjet-api20240824103050.azurewebsites.net/api/Expense/user/{userId}");
+            var response = await _httpClient.GetAsync($"https://localhost:7262/api/Expense/user/{userId}");
 
             if (response.IsSuccessStatusCode)
             {
@@ -191,7 +191,7 @@ namespace IkJetApp.Areas.Personnel.Controllers
 
             if (ModelState.IsValid)
             {
-                var response = await _httpClient.PostAsJsonAsync("https://ikjet-api20240824103050.azurewebsites.net/api/Expense", viewModel);
+                var response = await _httpClient.PostAsJsonAsync("https://localhost:7262/api/Expense", viewModel);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -207,7 +207,7 @@ namespace IkJetApp.Areas.Personnel.Controllers
         // GET: /Personnel/Expense/Edit/5
         public async Task<IActionResult> Edit(int id)
         {
-            var response = await _httpClient.GetAsync($"https://ikjet-api20240824103050.azurewebsites.net/api/Expense/{id}");
+            var response = await _httpClient.GetAsync($"https://localhost:7262/api/Expense/{id}");
 
             if (response.IsSuccessStatusCode)
             {
@@ -224,7 +224,7 @@ namespace IkJetApp.Areas.Personnel.Controllers
         public async Task<IActionResult> Edit(int id, ExpenseViewModel viewModel)
         {
 
-            var responseGet = await _httpClient.GetAsync($"https://ikjet-api20240824103050.azurewebsites.net/api/Expense/{viewModel.Id}");
+            var responseGet = await _httpClient.GetAsync($"https://localhost:7262/api/Expense/{viewModel.Id}");
 
             var prepayment = await responseGet.Content.ReadAsStringAsync();
             var prepaymentModel = JsonSerializer.Deserialize<ExpenseViewModel>(prepayment, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
@@ -244,7 +244,7 @@ namespace IkJetApp.Areas.Personnel.Controllers
                 viewModel.ImageFile.CopyTo(akisOrtami);
 
             }
-            var response = await _httpClient.PutAsJsonAsync($"https://ikjet-api20240824103050.azurewebsites.net/api/Expense/{id}", viewModel);
+            var response = await _httpClient.PutAsJsonAsync($"https://localhost:7262/api/Expense/{id}", viewModel);
 
             if (response.IsSuccessStatusCode)
             {
@@ -258,7 +258,7 @@ namespace IkJetApp.Areas.Personnel.Controllers
         // GET: /Personnel/Prepayment/Delete/5
         public async Task<IActionResult> Delete(int id)
         {
-            var response = await _httpClient.DeleteAsync($"https://ikjet-api20240824103050.azurewebsites.net/api/Expense/{id}");
+            var response = await _httpClient.DeleteAsync($"https://localhost:7262/api/Expense/{id}");
 
             if (response.IsSuccessStatusCode)
             {

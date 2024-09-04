@@ -22,7 +22,7 @@ namespace IkJetApp.Helpers
                 return null;
 
             var httpClient = _httpClientFactory.CreateClient("MyHttpClient");
-            var response = await httpClient.GetAsync($"https://ikjet-api20240824103050.azurewebsites.net/api/AppUser/{userId}");
+            var response = await httpClient.GetAsync($"https://localhost:7262/api/AppUser/{userId}");
 
             if (!response.IsSuccessStatusCode)
             {

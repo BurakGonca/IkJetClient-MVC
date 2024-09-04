@@ -26,7 +26,7 @@ namespace IkJetApp.Areas.Admin.Controllers
 
         public async Task<IActionResult> AllHRManagers()
         {
-            var url = "https://ikjet-api20240824103050.azurewebsites.net/api/AppUser/GetAllHRManager";
+            var url = "https://localhost:7262/api/AppUser/GetAllHRManager";
 
             var response = await _httpClient.GetAsync(url);
 
@@ -78,7 +78,7 @@ namespace IkJetApp.Areas.Admin.Controllers
 
             //Vergi Numarası uniquelik
 
-            var response = await _httpClient.GetAsync($"https://ikjet-api20240824103050.azurewebsites.net/api/Company/by-taxnumber/{viewModel.TaxNumber}");
+            var response = await _httpClient.GetAsync($"https://localhost:7262/api/Company/by-taxnumber/{viewModel.TaxNumber}");
             var jsonResponse = await response.Content.ReadAsStringAsync();
             var company = JsonConvert.DeserializeObject<CompanyViewModel>(jsonResponse);
 
@@ -113,7 +113,7 @@ namespace IkJetApp.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
-                var response2 = await _httpClient.PostAsJsonAsync("https://ikjet-api20240824103050.azurewebsites.net/api/Company", viewModel);
+                var response2 = await _httpClient.PostAsJsonAsync("https://localhost:7262/api/Company", viewModel);
 
                 if (response2.IsSuccessStatusCode)
                 {
@@ -131,7 +131,7 @@ namespace IkJetApp.Areas.Admin.Controllers
         // GET: /Admin/Company/Edit/5
         public async Task<IActionResult> Edit(int id)
         {
-            var response = await _httpClient.GetAsync($"https://ikjet-api20240824103050.azurewebsites.net/api/Company/{id}");
+            var response = await _httpClient.GetAsync($"https://localhost:7262/api/Company/{id}");
             if (response.IsSuccessStatusCode)
             {
                 //var company = await response.Content.ReadFromJsonAsync<CompanyViewModel>();
@@ -176,7 +176,7 @@ namespace IkJetApp.Areas.Admin.Controllers
 
           
 
-            var response = await _httpClient.GetAsync($"https://ikjet-api20240824103050.azurewebsites.net/api/Company/{id}");
+            var response = await _httpClient.GetAsync($"https://localhost:7262/api/Company/{id}");
 
             var jsonResponse = await response.Content.ReadAsStringAsync();
             var company = JsonConvert.DeserializeObject<CompanyViewModel>(jsonResponse);
@@ -203,7 +203,7 @@ namespace IkJetApp.Areas.Admin.Controllers
                 }
                 
 
-                var response2 = await _httpClient.PutAsJsonAsync($"https://ikjet-api20240824103050.azurewebsites.net/api/Company/{id}", viewModel);
+                var response2 = await _httpClient.PutAsJsonAsync($"https://localhost:7262/api/Company/{id}", viewModel);
 
                 if (response2.IsSuccessStatusCode)
                 {
@@ -219,7 +219,7 @@ namespace IkJetApp.Areas.Admin.Controllers
         // GET: /Admin/Company/List
         public async Task<IActionResult> List()
         {
-            var response = await _httpClient.GetAsync("https://ikjet-api20240824103050.azurewebsites.net/api/Company");
+            var response = await _httpClient.GetAsync("https://localhost:7262/api/Company");
             if (response.IsSuccessStatusCode)
             {
 
@@ -240,7 +240,7 @@ namespace IkJetApp.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
-            var response = await _httpClient.DeleteAsync($"https://ikjet-api20240824103050.azurewebsites.net/api/Company/{id}");
+            var response = await _httpClient.DeleteAsync($"https://localhost:7262/api/Company/{id}");
             if (response.IsSuccessStatusCode)
             {
                 TempData["Message"] = "Şirket başarıyla silindi";
